@@ -3,6 +3,7 @@
 노드에서는 모듈을 통해 전역 네임스페이스를 쉽게 오염시킬 수 있는 방식을 사용하지 않는다. 인클루드한 파일 중 어떤 변수와 함수를 애플리케이션에서 사용할 것인지 선택할 수 있다.
 * 만약 하나 이상의 변수나 함수를 반환한다면 `exports` 
 * 그렇지 않고 모듈이 하나의 변수나 함수만을 반환한다면 `module.exports`
+
 > 이유는 애플리케이션에 최종적으로 내보내지는 것은 module.exports 다. exports는 초기 단계에서 속성을 추가할 수 있는 빈 객체인 module.exports의 전역 참조 역할을 하고 있을 뿐이다. 그래서 exports.myFunc는 module.exports.myFunc의 줄임말이다. 결과적으로 exports 에 다른 값이 할당되면 이는 module.exports와 exports 사이의 참조가 깨지는 것을 의미한다. 그렇기 때문에 exports = myFunc 는 잘못된 방법이고 생각하는대로 동작되지 않을 것이다.
 
 ###require와 동기식 I/O에 관해
